@@ -2,9 +2,11 @@ import express from "express";
 import productController from "./controllers/productsController.js";
 import tableController from "./controllers/tableController.js";
 import conectar, { client } from "./database/database.js";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.json({ message: "Bienvenidos a la app" });
